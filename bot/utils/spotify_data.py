@@ -1,3 +1,7 @@
+# "<artist_name>": "<spotify_id>",
+# where "spotify_id" is the token at the end of URLs such as: 
+# https://open.spotify.com/artist/4MnZkh4dpNmTMPxkl4Ev5L 
+
 monitored_artists = {
     "Adagio": "5QJvZ6s15Hgpjq7UKktjaZ",
     "Allen Lande": "2hxa4ytcni5FUIK8IR27tX",

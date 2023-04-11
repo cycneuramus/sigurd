@@ -32,6 +32,8 @@ services:
     restart: unless-stopped
     volumes: 
       - ./bot:/home/sigurd/bot
+    env_file:
+      - .env
     depends_on:
       - bot
     command: "cron"

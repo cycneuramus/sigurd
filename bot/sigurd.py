@@ -19,19 +19,19 @@ def main():
     bot_phone = os.environ["BOT_PHONE"]
     self_phone = os.environ["SELF_PHONE"]
     group_id = os.environ["GROUP_ID"]
-    group_secret = os.environ["GROUP_SECRET"]
-
     signal_service = os.environ["SIGNAL_SERVICE"]
 
     config = {
-        "signal_service": signal_service,
         "phone_number": bot_phone,
+        "signal_service": signal_service,
         "storage": None,
     }
-
     bot = SignalBot(config)
-    bot.listen(group_id, group_secret)
-    bot.listen(self_phone)
+
+    if self_phone:
+        bot.listen(self_phone)
+    if group_id:
+        bot.listen(group_id)
 
     bot.register(ChatCommand())
     bot.register(LyricsCommand())
