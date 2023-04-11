@@ -1,12 +1,13 @@
-## Overview
+# Sigurd
 
 Sigurd is an example chatbot for Signal built on the [`signalbot`](https://github.com/filipre/signalbot) framework. Features:
 
-+ Responds quite rudely, especially to negative feedback (e.g. "You suck, Sigurd!").
-+ Keeps quiet unless his name is mentioned, or unless he receives a `!` prefixed command.
++ Responds quite rudely, especially to negative feedback.
 + Caches responses so as never to repeat himself.
++ Keeps quiet unless his name is mentioned, or unless he receives a `!` prefixed command.
 + Quotes random song lyrics on demand (e.g. `!lyrics Symphony X`).
-+ Notifies you of new releases from [artists that you wish to track](bot/utils/spotify_data.py).
++ Notifies you of new releases from [artists that you wish to track](bot/utils/spotify_data.py)
++ Performs tasks according to a [`cron`](bot/tasks/cron) schedule.
 
 <p>
 	<img src="screenshots/chat.png" height=200 />
@@ -14,7 +15,7 @@ Sigurd is an example chatbot for Signal built on the [`signalbot`](https://githu
 	<img src="screenshots/release-radar.png" height=200 />
 </p>
 
-### Installation
+## Installation
 
 1. Register a Signal account for Sigurd (you will need a dedicated phone number for this).
 
@@ -33,7 +34,7 @@ git clone https://github.com/cycneuramus/sigurd
 
 	+ `GENIUS_ACCESS_TOKEN`: Required for the `!lyrics` command. See the [Genius API docs](https://docs.genius.com/).
 	+ `NTFY_URL`: [ntfy](https://ntfy.sh) server to use. Required for the `release_radar` task to send notifications.
-	+ `SPOTIFY_CLIENT_*`: Required for the `release_radar` task. See the [Spotify API docs](https://developer.spotify.com/documentation/web-api).
+	+ `SPOTIFY_CLIENT_*`: Required for the [`release_radar`](bot/tasks/release_radar/release_radar.py) task. See the [Spotify API docs](https://developer.spotify.com/documentation/web-api).
 
 	+ `SIGNAL_SERVICE`: Hostname for the `signal-cli` REST API service in `docker-compose.yml`.
 
