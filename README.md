@@ -10,9 +10,9 @@ Sigurd is an example chatbot for Signal built on the [`signalbot`](https://githu
 + Performs tasks according to a [`cron`](bot/tasks/cron) schedule.
 
 <p>
-	<img src="screenshots/chat.png" width=200 />
-	<img src="screenshots/lyrics.png" width=200 />
-	<img src="screenshots/release-radar.png" width=200 />
+	<img src="screenshots/chat.png" width=250 />
+	<img src="screenshots/lyrics.png" width=250 />
+	<img src="screenshots/release-radar.png" width=250 />
 </p>
 
 ## Installation
