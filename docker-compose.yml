@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  signal-cli-rest-api:
+    image: bbernhard/signal-cli-rest-api:latest
+    container_name: sigurd-signal-cli-rest-api
+    restart: unless-stopped
+    environment:
+      - MODE=json-rpc
+    ports:
+      - 7446:8080 
+    volumes:
+      - ${HOME}/.local/share/signal-cli:/home/.local/share/signal-cli
+
+  bot:
+    image: ghcr.io/cycneuramus/sigurd
+    container_name: sigurd-bot
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Stockholm
+    volumes: 
+      - ./bot:/home/sigurd/bot
+    env_file:
+      - .env
+    depends_on:
+      - signal-cli-rest-api
+    command: "bot"
+
+  cron:
+    image: ghcr.io/cycneuramus/sigurd
+    container_name: sigurd-cron
+    restart: unless-stopped
+    volumes: 
+      - ./bot:/home/sigurd/bot
+    depends_on:
+      - bot
+    command: "cron"
