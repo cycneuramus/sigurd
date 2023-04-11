@@ -8,9 +8,11 @@ Sigurd is an example chatbot for Signal built on the `[signalbot](https://github
 + Quotes random song lyrics on demand (e.g. `!lyrics Symphony X`).
 + Notifies you of new releases from [artists that you wish to track](bot/utils/spotify_data.py).
 
-<img src="screenshots/chat.png" width=100 />
-<img src="screenshots/lyrics.png" width=100 />
-<img src="screenshots/release-radar.png" width=100 />
+<p>
+	<img src="screenshots/chat.png" height=200 />
+	<img src="screenshots/lyrics.png" height=200 />
+	<img src="screenshots/release-radar.png" height=200 />
+</p>
 
 ### Installation
 
