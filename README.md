@@ -1,6 +1,6 @@
 ## Overview
 
-Sigurd is an example chatbot for Signal built on the `[signalbot](https://github.com/filipre/signalbot)` framework. Features:
+Sigurd is an example chatbot for Signal built on the [`signalbot`](https://github.com/filipre/signalbot) framework. Features:
 
 + Responds quite rudely, especially to negative feedback (e.g. "You suck, Sigurd!").
 + Keeps quiet unless his name is mentioned, or unless he receives a `!` prefixed command.
@@ -18,7 +18,7 @@ Sigurd is an example chatbot for Signal built on the `[signalbot](https://github
 
 1. Register a Signal account for Sigurd (you will need a dedicated phone number for this).
 
-2. Install and configure `[signal-cli](https://github.com/AsamK/signal-cli/)`.
+2. Install and configure [`signal-cli`](https://github.com/AsamK/signal-cli/).
 
 3. Clone this repo:
 ```
