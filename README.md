@@ -27,15 +27,15 @@ git clone https://github.com/cycneuramus/sigurd
 
 4. Populate the `.env` file:
 
-+ `BOT_PHONE`: Phone number for Sigurd's Signal account.
-+ `SELF_PHONE`: Phone number for your own Signal account, or any other phone number that Sigurd should respond to.
-+ `GROUP_ID`: Signal group for Sigurd to participate in, if any.
+	+ `BOT_PHONE`: Phone number for Sigurd's Signal account.
+	+ `SELF_PHONE`: Phone number for your own Signal account, or any other phone number that Sigurd should respond to.
+	+ `GROUP_ID`: Signal group for Sigurd to participate in, if any.
 
-+ `GENIUS_ACCESS_TOKEN`: Required for the `!lyrics` command. See the [Genius API docs](https://docs.genius.com/).
-+ `NTFY_URL`: [ntfy](https://ntfy.sh) server to use. Required for the `release_radar` task to send notifications.
-+ `SPOTIFY_CLIENT_*`: Required for the `release_radar` task. See the [Spotify API docs](https://developer.spotify.com/documentation/web-api).
+	+ `GENIUS_ACCESS_TOKEN`: Required for the `!lyrics` command. See the [Genius API docs](https://docs.genius.com/).
+	+ `NTFY_URL`: [ntfy](https://ntfy.sh) server to use. Required for the `release_radar` task to send notifications.
+	+ `SPOTIFY_CLIENT_*`: Required for the `release_radar` task. See the [Spotify API docs](https://developer.spotify.com/documentation/web-api).
 
-+ `SIGNAL_SERVICE`: Hostname for the `signal-cli` REST API service in `docker-compose.yml`.
+	+ `SIGNAL_SERVICE`: Hostname for the `signal-cli` REST API service in `docker-compose.yml`.
 
 5. Spin up the Docker containers:
 

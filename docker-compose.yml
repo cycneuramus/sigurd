@@ -30,6 +30,8 @@ services:
     image: ghcr.io/cycneuramus/sigurd
     container_name: sigurd-cron
     restart: unless-stopped
+    environment:
+      - TZ=Europe/Stockholm
     volumes: 
       - ./bot:/home/sigurd/bot
     env_file:
