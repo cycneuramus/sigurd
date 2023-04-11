@@ -3,6 +3,7 @@ FROM python:alpine
 ARG USER=sigurd
 ARG HOME_DIR=/home/$USER
 ARG BOT_DIR=$HOME_DIR/bot
+ARG BIN_DIR=$HOME_DIR/.local/bin
 
 ENV SUPERCRONIC_URL https://github.com/aptible/supercronic/releases/download/v0.1.12/supercronic-linux-amd64
 ENV SUPERCRONIC supercronic-linux-amd64
@@ -28,6 +29,7 @@ USER $USER
 
 RUN mkdir -p $BOT_DIR
 ENV PYTHONPATH=$BOT_DIR
+ENV PATH=$BIN_DIR:${PATH}
 
 RUN pip install \
 	lyricsgenius \
