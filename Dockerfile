@@ -32,6 +32,7 @@ ENV PYTHONPATH=$BOT_DIR
 ENV PATH=$BIN_DIR:${PATH}
 
 RUN pip install \
+	openai \
 	lyricsgenius \
 	signalbot \
 	tekore \
