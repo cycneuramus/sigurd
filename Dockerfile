@@ -32,6 +32,7 @@ RUN pip install \
 	EdgeGPT \
 	openai \
 	lyricsgenius \
+	semaphore-bot \
 	signalbot \
 	tekore \
 	tinydb
