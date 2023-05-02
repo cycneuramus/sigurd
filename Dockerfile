@@ -3,7 +3,6 @@ FROM python:alpine
 ARG USER=sigurd
 ARG HOME_DIR=/home/$USER
 ARG BOT_DIR=$HOME_DIR/bot
-ARG BIN_DIR=$HOME_DIR/.local/bin
 
 ENV SUPERCRONIC_URL https://github.com/aptible/supercronic/releases/download/v0.1.12/supercronic-linux-amd64
 ENV SUPERCRONIC supercronic-linux-amd64
@@ -11,7 +10,6 @@ ENV SUPERCRONIC_SHA1SUM 048b95b48b708983effb2e5c935a1ef8483d9e3e
 
 RUN apk add --no-cache --update \
 	curl \
-	build-base \
 	tzdata
 
 RUN curl -fsSLO "$SUPERCRONIC_URL" \
@@ -29,9 +27,9 @@ USER $USER
 
 RUN mkdir -p $BOT_DIR
 ENV PYTHONPATH=$BOT_DIR
-ENV PATH=$BIN_DIR:${PATH}
 
 RUN pip install \
+	EdgeGPT \
 	openai \
 	lyricsgenius \
 	signalbot \
