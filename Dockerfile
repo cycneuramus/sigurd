@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.10
 
 ARG USER=sigurd
 ARG HOME_DIR=/home/$USER
@@ -31,6 +31,7 @@ ENV PYTHONPATH=$BOT_DIR
 RUN pip install \
 	EdgeGPT \
 	openai \
+	langchain \
 	lyricsgenius \
 	semaphore-bot \
 	signalbot \
