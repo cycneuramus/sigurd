@@ -13,10 +13,10 @@ ENV SUPERCRONIC_SHA1SUM 048b95b48b708983effb2e5c935a1ef8483d9e3e
 # 	tzdata
 
 RUN curl -fsSLO "$SUPERCRONIC_URL" \
- && echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c - \
- && chmod +x "$SUPERCRONIC" \
- && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
- && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
+	&& echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c - \
+	&& chmod +x "$SUPERCRONIC" \
+	&& mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
+	&& ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
 
 RUN adduser \
 	--disabled-password \
@@ -28,11 +28,13 @@ USER $USER
 RUN mkdir -p $BOT_DIR
 ENV PYTHONPATH=$BOT_DIR
 
-RUN pip install \
+RUN pip install --no-cache-dir \
 	EdgeGPT \
-	openai \
+	GoogleBard \
+	hugchat \
 	langchain \
 	lyricsgenius \
+	openai \
 	semaphore-bot \
 	signalbot \
 	tekore \
