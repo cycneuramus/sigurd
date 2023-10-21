@@ -35,6 +35,7 @@ RUN pip install --no-cache-dir \
 	langchain \
 	lyricsgenius \
 	openai \
+	pydub \
 	revChatGPT \
 	semaphore-bot \
 	signalbot \
