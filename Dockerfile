@@ -30,6 +30,7 @@ ENV PYTHONPATH=$BOT_DIR
 
 RUN pip install --no-cache-dir \
 	EdgeGPT \
+	ffmpeg \
 	GoogleBard \
 	hugchat \
 	langchain \
