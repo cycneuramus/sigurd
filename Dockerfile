@@ -12,6 +12,10 @@ ENV SUPERCRONIC_SHA1SUM 048b95b48b708983effb2e5c935a1ef8483d9e3e
 # 	curl \
 # 	tzdata
 
+RUN apt-get update && apt-get install -y \
+	ffmpeg \
+	libavcodec-extra
+
 RUN curl -fsSLO "$SUPERCRONIC_URL" \
 	&& echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c - \
 	&& chmod +x "$SUPERCRONIC" \
@@ -30,7 +34,6 @@ ENV PYTHONPATH=$BOT_DIR
 
 RUN pip install --no-cache-dir \
 	EdgeGPT \
-	ffmpeg \
 	GoogleBard \
 	hugchat \
 	langchain \
