@@ -1,18 +1,15 @@
-FROM python:3.10
+FROM python:3.13-slim-bookworm
 
 ARG USER=sigurd
 ARG HOME_DIR=/home/$USER
 ARG BOT_DIR=$HOME_DIR/bot
 
-ENV SUPERCRONIC_URL https://github.com/aptible/supercronic/releases/download/v0.1.12/supercronic-linux-amd64
-ENV SUPERCRONIC supercronic-linux-amd64
-ENV SUPERCRONIC_SHA1SUM 048b95b48b708983effb2e5c935a1ef8483d9e3e
-
-# RUN apk add --no-cache --update \
-# 	curl \
-# 	tzdata
+ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.2.33/supercronic-linux-amd64 \
+	SUPERCRONIC_SHA1SUM=71b0d58cc53f6bd72cf2f293e09e294b79c666d8 \
+	SUPERCRONIC=supercronic-linux-amd64
 
 RUN apt-get update && apt-get install -y \
+	curl \
 	ffmpeg \
 	libavcodec-extra
 
@@ -33,15 +30,8 @@ RUN mkdir -p $BOT_DIR
 ENV PYTHONPATH=$BOT_DIR
 
 RUN pip install --no-cache-dir \
-	EdgeGPT \
-	GoogleBard \
-	hugchat \
-	langchain \
 	lyricsgenius \
-	openai \
 	pydub \
-	revChatGPT \
-	semaphore-bot \
 	signalbot \
 	tekore \
 	tinydb

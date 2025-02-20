@@ -5,6 +5,6 @@ case $1 in
 		exec python sigurd.py
 		;;
 	cron)
-		exec supercronic -passthrough-logs tasks/cron
+		exec /usr/local/bin/supercronic -passthrough-logs tasks/cron
 		;;
 esac
